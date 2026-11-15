@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>오늘의 할 일</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div class="header-top">
+        <div>
+          <p id="today-date" class="date-text"></p>
+          <h1 class="title">오늘의 할 일</h1>
+        </div>
+        <div class="progress-badge" aria-live="polite">
+          <span id="progress-count">0 / 0</span>
+        </div>
+      </div>
+      <div class="progress-track" aria-hidden="true">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+    </header>
+
+    <form id="todo-form" class="todo-form" autocomplete="off">
+      <label for="todo-input" class="sr-only">새로운 할 일</label>
+      <input
+        id="todo-input"
+        type="text"
+        class="todo-input"
+        placeholder="오늘 할 일을 입력하세요..."
+        maxlength="120"
+        required
+      />
+      <button type="submit" class="add-btn" aria-label="할 일 추가">추가</button>
+    </form>
+
+    <section class="controls" aria-label="필터 및 관리">
+      <div class="filters" role="tablist">
+        <button type="button" class="filter-btn active" data-filter="all" role="tab" aria-selected="true">전체</button>
+        <button type="button" class="filter-btn" data-filter="active" role="tab" aria-selected="false">진행 중</button>
+        <button type="button" class="filter-btn" data-filter="completed" role="tab" aria-selected="false">완료</button>
+      </div>
+      <button type="button" id="clear-completed" class="clear-btn">완료 항목 지우기</button>
+    </section>
+
+    <ul id="todo-list" class="todo-list" aria-live="polite"></ul>
+
+    <p id="empty-state" class="empty-state" hidden>
+      등록된 할 일이 없습니다. 위 입력창에서 오늘의 할 일을 추가해보세요!
+    </p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
