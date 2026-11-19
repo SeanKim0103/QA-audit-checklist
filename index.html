@@ -135,14 +135,15 @@
         </svg>
         초기화
       </button>
-      <button type="button" class="action-btn btn-html-export" id="exportHtmlBtn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-          <polyline points="14 2 14 8 20 8"></polyline>
-          <line x1="12" y1="18" x2="12" y2="12"></line>
-          <polyline points="9 15 12 18 15 15"></polyline>
+      <button type="button" class="action-btn btn-pdf-export" id="exportPdfBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="18" cy="5" r="3"></circle>
+          <circle cx="6" cy="12" r="3"></circle>
+          <circle cx="18" cy="19" r="3"></circle>
+          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
         </svg>
-        사진보고서
+        <span class="btn-label">사진보고서</span>
       </button>
       <button type="button" class="action-btn btn-export" id="exportCsvBtn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -181,6 +182,38 @@
       <div class="modal-actions">
         <button type="button" class="modal-btn" id="cancelResetBtn">취소</button>
         <button type="button" class="modal-btn danger" id="confirmResetBtn">모두 초기화</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PDF 사진보고서 공유/저장 모달 -->
+  <div class="modal-backdrop" id="pdfShareModal" role="dialog" aria-modal="true" aria-labelledby="pdfShareModalTitle">
+    <div class="modal-box pdf-modal-box">
+      <div class="pdf-modal-header">
+        <h3 class="modal-title pdf-modal-title" id="pdfShareModalTitle">PDF 사진보고서 준비 완료</h3>
+        <button type="button" class="pdf-modal-close" id="closePdfShareBtn" aria-label="닫기">×</button>
+      </div>
+      <div class="pdf-file-card">
+        <div class="pdf-file-badge" aria-hidden="true">PDF</div>
+        <div class="pdf-file-info">
+          <div class="pdf-file-name" id="pdfShareFileName"></div>
+          <div class="pdf-file-meta" id="pdfShareFileMeta"></div>
+        </div>
+      </div>
+      <p class="modal-desc pdf-share-desc" id="pdfShareDesc"></p>
+      <div class="pdf-share-actions">
+        <button type="button" class="pdf-action-primary" id="retryNativeShareBtn" hidden>📤 지금 PDF 공유하기</button>
+        <div class="pdf-action-grid">
+          <button type="button" class="pdf-action-btn primary" id="downloadPdfBtn">⬇ PDF 파일 저장</button>
+          <button type="button" class="pdf-action-btn" id="previewPdfBtn">👁 PDF 미리보기</button>
+        </div>
+        <div class="pdf-action-grid">
+          <button type="button" class="pdf-action-btn" id="copySummaryBtn">📋 요약 복사</button>
+          <button type="button" class="pdf-action-btn" id="emailSummaryBtn">✉ 이메일 작성</button>
+        </div>
+      </div>
+      <div class="pdf-legacy-wrap">
+        <button type="button" class="pdf-legacy-btn" id="exportLegacyHtmlBtn">기존 HTML 사진보고서로 저장</button>
       </div>
     </div>
   </div>
