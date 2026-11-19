@@ -11,7 +11,7 @@
         { id: 1, text: "원료 입고 시 차량 위생 상태 및 방수포 덮개 이상 유무" },
         { id: 2, text: "주요 곡물 및 박류 곰팡이·해충·이물 혼입 육안 확인" },
         { id: 3, text: "사일로(Silo) 및 원료 빈(Bin) 상부 결로, 누수 및 청결 상태" },
-        { id: 4, text: "알레르기 유발 물질 및 약제 첨가 원료의 구분 보관(라벨링) 준수" }
+        { id: 4, text: "입고원료 보관기일 준수" }
       ]
     },
     {
@@ -60,8 +60,8 @@
     return {
       basic: {
         date: getTodayLocal(),
-        line: "1공장 배합라인",
-        inspector: "김현승",
+        line: "배합라인",
+        inspector: "이름 입력",
         shift: "주간"
       },
       activeTab: "all",
@@ -142,8 +142,8 @@
 
   function syncBasicInputs() {
     inspectDateEl.value = state.basic.date || getTodayLocal();
-    factoryLineEl.value = state.basic.line || "1공장 배합라인";
-    inspectorNameEl.value = state.basic.inspector !== undefined ? state.basic.inspector : "김현승";
+    factoryLineEl.value = state.basic.line || "배합라인";
+    inspectorNameEl.value = state.basic.inspector !== undefined ? state.basic.inspector : "이름 입력";
     overallMemoEl.value = state.overallMemo || "";
 
     shiftBtns.forEach((btn) => {
